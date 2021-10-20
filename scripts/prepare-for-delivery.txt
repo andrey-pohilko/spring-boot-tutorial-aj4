@@ -1,0 +1,27 @@
+*** Full tutorial
+https://docs.spring.io/spring-boot/docs/current/reference/html/deployment.html#deployment.installing.nix-services
+
+*** install latest java
+
+*** change pom.xml
+use the following plugin configuration:
+
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <executable>true</executable>
+    </configuration>
+</plugin>
+
+*** Create service file and place to /etc/systemd/system
+Example of service file https://github.com/andrey-pohilko/spring-boot-tutorial-aj4/blob/master/spring-boot-tutorial-aj4.service
+
+*** Reload systemd
+systemctl daemon-reload
+
+*** copy jar file from your machine to server
+scp target\spring-boot-tutorial-aj4-0.0.1-SNAPSHOT.jar root@your-server-ip:/var/lib/spring-boot-tutorial-aj4.jar
+
+*** start your service
+systemctl start spring-boot-tutorial-aj4.service
