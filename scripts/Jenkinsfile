@@ -6,6 +6,11 @@ pipeline {
                 sh '/opt/apache-maven-3.8.3/bin/mvn -B -DskipTests clean package'
             }
         }
+        stage('Start service') {
+            steps {
+                sh 'sh ./scripts/start-service.sh'
+            }
+        }
         stage('Test') {
             steps {
                 sh '/opt/apache-maven-3.8.3/bin/mvn test'
@@ -13,7 +18,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'sh ./scripts/deliver-jenkins.sh'
+                sh '/opt/apache-maven-3.8.3/bin/deliver-jenkins.sh'
             }
         }
     }

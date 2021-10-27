@@ -1,0 +1,11 @@
+[Unit]
+Description=jenkins
+After=syslog.target
+
+[Service]
+User=jenkins
+ExecStart=java -jar /opt/jenkins.war --webroot=/var/lib/jenkins
+SuccessExitStatus=143
+
+[Install]
+WantedBy=multi-user.target
