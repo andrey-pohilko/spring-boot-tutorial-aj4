@@ -26,5 +26,5 @@ set -x
 
 cp target/${NAME}-${VERSION}.jar /var/lib/spring-boot-tutorial-aj4/
 mv /var/lib/spring-boot-tutorial-aj4/${NAME}-${VERSION}.jar spring-boot-tutorial-aj4.jar
-sudo systemctl restart spring-boot-tutorial-aj4.service
+systemctl restart spring-boot-tutorial-aj4.service
 set +x
