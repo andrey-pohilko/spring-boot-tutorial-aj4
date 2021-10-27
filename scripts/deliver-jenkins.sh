@@ -23,5 +23,8 @@ set +x
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
-cp target/${NAME}-${VERSION}.jar /var/lib/spring-boot-tutorial-aj4/spring-boot-tutorial-aj4.jar
-systemctl restart spring-boot-tutorial-aj4.service
+
+cp target/${NAME}-${VERSION}.jar /var/lib/spring-boot-tutorial-aj4/
+mv /var/lib/spring-boot-tutorial-aj4/${NAME}-${VERSION}.jar spring-boot-tutorial-aj4.jar
+sudo systemctl restart spring-boot-tutorial-aj4.service
+set +x
