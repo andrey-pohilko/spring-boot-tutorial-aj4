@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-boot-tutorial-aj4</artifactId>
+	<artifactId>spring-boot-tutorial-aj3</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-boot-tutorial-aj4</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-boot-tutorial-aj3</name>
+	<description>Demo project for Spring Boot - AJ3</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -27,6 +27,16 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>com.example</groupId>-->
+<!--			<artifactId>spring-boot-tutorial-aj3</artifactId>-->
+<!--			<version>0.0.1-SNAPSHOT</version>-->
+<!--		</dependency>-->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
 
 
 	</dependencies>
@@ -40,6 +50,7 @@
 					<executable>true</executable>
 				</configuration>
 			</plugin>
+
 		</plugins>
 	</build>
 
