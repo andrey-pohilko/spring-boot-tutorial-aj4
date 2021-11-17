@@ -28,6 +28,12 @@ cp scripts/docker/Dockerfile /var/lib/spring-boot-tutorial-aj4
 cp target/${NAME}-${VERSION}.jar /var/lib/spring-boot-tutorial-aj4/spring-boot-tutorial-aj4.jar
 
 cd /var/lib/spring-boot-tutorial-aj4
-docker build -t anoxis/spring-boot-tutorial-aj4-image .
 
-docker run --restart unless-stopped -d -p 9000:9000 --name spring-boot-tutorial-aj4 anoxis/spring-boot-tutorial-aj4-image
+
+docker build -t anoxis/spring-boot-tutorial-aj4-image:${VERSION} .
+docker stop spring-boot-tutorial-aj4
+docker rm spring-boot-tutorial-aj4
+docker rmi anoxis/spring-boot-tutorial-aj4-image:latest
+docker tag anoxis/spring-boot-tutorial-aj4-image:${VERSION} anoxis/spring-boot-tutorial-aj4-image:latest
+
+docker run --restart unless-stopped -d -p 9000:9000 --name spring-boot-tutorial-aj4 anoxis/spring-boot-tutorial-aj4-image:latest
