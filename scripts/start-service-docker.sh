@@ -25,7 +25,7 @@ echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 mkdir -p /var/lib/spring-boot-tutorial-aj4
 cp scripts/docker/Dockerfile /var/lib/spring-boot-tutorial-aj4
-cp target/${NAME}-${VERSION}.jar /var/lib/spring-boot-tutorial-aj4
+cp target/${NAME}-${VERSION}.jar /var/lib/spring-boot-tutorial-aj4/spring-boot-tutorial-aj4.jar
 
 cd /var/lib/spring-boot-tutorial-aj4
 docker build -t anoxis/spring-boot-tutorial-aj4-image .
